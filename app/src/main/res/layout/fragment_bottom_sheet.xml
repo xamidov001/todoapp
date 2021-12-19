@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/yellow_color"
+    tools:context=".fragments.BottomSheetFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="#33252A30"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:cardElevation="1dp"
+        app:cardCornerRadius="3dp"
+        android:layout_width="60dp"
+        android:layout_height="5dp"/>
+
+    <TextView
+        android:id="@+id/CAT_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Family"
+        android:textColor="@color/black_color"
+        android:textSize="27sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/count_task"
+        app:layout_constraintTop_toBottomOf="@id/CAT_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="50dp"
+        android:text="1 task"
+        android:textSize="18sp"
+        android:textColor="#33252A30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        app:layout_constraintTop_toTopOf="@id/CAT_name"
+        app:layout_constraintBottom_toBottomOf="@id/CAT_name"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/ic_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/item_task"
+        app:layout_constraintTop_toBottomOf="@id/count_task"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/recycle"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
